@@ -19,3 +19,14 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
     console.log('SW2: Activo y listo para controlar la app');
 });
+
+self.addEventListener('fetcha', event => {
+    console.log('SW', event.request.url );
+
+    if (event.request.url.includes('https://reqres.in/') ) {
+        const resp = new Response(`{ok: false, mensaje: 'jajaja'}`);
+    
+        event.respondWith( resp );
+    
+    }
+});
