@@ -37,3 +37,9 @@ self.addEventListener('sync', event => {
     console.log(event.tag);
 
 });
+
+self.addEventListener('push', event => {
+
+    console.log('Notificacion recibida');
+
+});
